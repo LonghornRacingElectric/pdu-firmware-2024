@@ -18,10 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "angel_can.h"
+#include "adc.h"
+#include "can.h"
 #include "tim.h"
 #include "gpio.h"
-#include "faults.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -89,6 +90,7 @@ int main(void)
   MX_GPIO_Init();
   MX_CAN1_Init();
   MX_TIM2_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   volatile uint32_t last_time_recorded = 0;
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
