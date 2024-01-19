@@ -8,7 +8,7 @@ static CanOutbox imu_gyro_outbox;
 
 
 void vcu_can_init(){
-    can_addOutbox(PDU_VCU_LV_CURRENTS, 0.25f, &currents_outbox);
+    can_addOutbox(PDU_VCU_LV_CURRENTS, 1.0f, &currents_outbox);
     can_addOutbox(PDU_VCU_IMU_ACCEL, 0.25f, &imu_accel_outbox);
     can_addOutbox(PDU_VCU_IMU_GYRO, 0.25f, &imu_gyro_outbox);
 }
