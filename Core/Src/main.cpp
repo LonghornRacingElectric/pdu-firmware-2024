@@ -20,6 +20,7 @@
 #include "main.h"
 #include "adc.h"
 #include "can.h"
+#include "spi.h"
 #include "tim.h"
 #include "gpio.h"
 
@@ -91,6 +92,7 @@ int main(void)
   MX_CAN1_Init();
   MX_TIM2_Init();
   MX_ADC1_Init();
+  MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
   clock_init();
   /* USER CODE END 2 */
