@@ -29,6 +29,7 @@
 #include "clock.h"
 #include "led.h"
 #include "switches.h"
+#include "spi_adc.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,7 +61,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+AdcVoltages adcVoltages;
 /* USER CODE END 0 */
 
 /**
@@ -101,6 +102,7 @@ int main(void)
   clock_init();
   led_init();
   switches_init();
+  spiAdc_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -116,6 +118,7 @@ int main(void)
     int t = ((int)clock_getTime()) % 5;
     float pct = t / 4.0f;
     switches_setBrakeLight(pct*pct);
+
   }
   /* USER CODE END 3 */
 }
